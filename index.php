@@ -1,7 +1,7 @@
 <?php
 
 $clientId = 'eab4cc6f86173ce';
-$imagePaths = ['img1.png', 'img2.jpg', 'img3.png'];
+$imagePaths = ['img1.png', 'img2.png', 'img3.png'];
 
 foreach ($imagePaths as $imagePath) {
     if (!file_exists($imagePath)) {
@@ -32,7 +32,7 @@ foreach ($imagePaths as $imagePath) {
 
     if ($http_code == 200) {
         $data = json_decode($response, true);
-        echo "Файл $imagePath загружен: <a href='".$data['data']['link']."'>".$data['data']['link']."</a><br>";
+        echo "Файл $imagePath загружен: <a href='".$data['data']['link']."'>".$data['data']['id']."</a><br>";
     } else {
         echo "Ошибка загрузки файла $imagePath: $response <br>";
     }
